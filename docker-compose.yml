@@ -1,7 +1,8 @@
 services:
   backend:
-    build: ./backend
+    image: feridsaad/garderie-backend:latest
     container_name: garderie-backend
+    restart: unless-stopped
     environment:
       - PORT=5000
     ports:
@@ -10,8 +11,9 @@ services:
       - garderie-net
 
   frontend:
-    build: ./frontend
+    image: feridsaad/garderie-frontend:latest
     container_name: garderie-frontend
+    restart: unless-stopped
     environment:
       - BACKEND_URL=http://backend:5000
     ports:
