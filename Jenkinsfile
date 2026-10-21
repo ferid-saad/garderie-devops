@@ -38,13 +38,13 @@ pipeline {
 
         stage('Build Frontend') {
             steps {
-                sh 'docker build -t $FRONT_IMAGE:$IMAGE_TAG -t $FRONT_IMAGE:latest ./frontend'
+                sh 'docker build --network=host -t $FRONT_IMAGE:$IMAGE_TAG -t $FRONT_IMAGE:latest ./frontend'
             }
         }
 
         stage('Build Backend') {
             steps {
-                sh 'docker build -t $BACK_IMAGE:$IMAGE_TAG -t $BACK_IMAGE:latest ./backend'
+                sh 'docker build --network=host -t $BACK_IMAGE:$IMAGE_TAG -t $BACK_IMAGE:latest ./backend'
             }
         }
 
