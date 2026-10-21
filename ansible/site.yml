@@ -1,0 +1,6 @@
+---
+- name: Provisionner la VM Ma Garderie
+  hosts: garderie
+  become: true
+  roles:
+    - docker
