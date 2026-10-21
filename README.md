@@ -6,6 +6,7 @@ Application Web de présentation d'une garderie d'enfants, livrée par une chaî
 - Image frontend : https://hub.docker.com/r/feridsaad/garderie-frontend
 - Image backend : https://hub.docker.com/r/feridsaad/garderie-backend
 
+![Image-Dockerhub](screenshots/docker-desktop-containers.png)
 ## 1. Présentation et technologies
 
 La landing page affiche trois composants (Navbar, Hero, Services) dont les données viennent d'une API REST.
@@ -28,6 +29,7 @@ La landing page affiche trois composants (Navbar, Hero, Services) dont les donn�
 | GET | `/api/garderie` | Informations générales |
 | GET | `/api/services` | Liste des services |
 | GET | `/api/activites` | Liste des activités |
+
 
 ## 2. Architecture
 
@@ -80,6 +82,7 @@ docker compose -f docker-compose.dev.yml up --build -d
 ```
 
 Application : http://localhost:3000. Pour arrêter : `docker compose -f docker-compose.dev.yml down`.
+![page de garde](screenshots/page-de-garde.png)
 
 Test automatisé :
 
