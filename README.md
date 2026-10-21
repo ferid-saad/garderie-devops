@@ -30,16 +30,35 @@ La landing page affiche trois composants (Navbar, Hero, Services) dont les donn�
 | GET | `/api/activites` | Liste des activités |
 
 ## 2. Architecture
+
+
+```text
 garderie-devops/
-├── backend/ API Express + Dockerfile
-├── frontend/ Application Next.js + Dockerfile + test Jest
-├── ansible/ Inventaire, playbook site.yml, rôle docker
-├── screenshots/ Captures d’écran
-├── Jenkinsfile Pipeline CI/CD
-├── Vagrantfile Définition de la VM
-├── docker-compose.yml Déploiement (images Docker Hub)
-├── docker-compose.dev.yml Développement local (construction des images)
+│
+├── backend/
+│   ├── API Express.js
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── Application Next.js
+│   ├── Dockerfile
+│   └── Tests Jest
+│
+├── ansible/
+│   ├── inventory
+│   ├── site.yml
+│   └── roles/docker/
+│
+├── screenshots/
+│   └── Captures d'écran
+│
+├── Jenkinsfile
+├── Vagrantfile
+├── docker-compose.yml
+├── docker-compose.dev.yml
 └── README.md
+```
+
 
 ### Chaîne CI/CD
 GitHub -> Jenkins -> Docker Hub -> VM Vagrant (Docker Compose)
@@ -160,11 +179,11 @@ curl http://192.168.56.10:5000/api/activites
 | Depuis | Adresse |
 |---|---|
 | Le PC hôte | http://192.168.56.10:3000 |
-| Une autre machine du réseau | `http://<adresse IP du PC hôte>:3000` (exemple : http://192.168.100.24:3000) |
+| Mon téléphone sur le meme réseau | `http://192.168.100.4:3000` (exemple : http://192.168.100.24:3000) |
 
 Les ports 3000 et 5000 de la VM sont redirigés vers le PC hôte, qui doit les autoriser dans son pare-feu. L'adresse du PC hôte dépend du réseau Wi-Fi : la relever avec `ipconfig` (Windows) avant l'utilisation.
 
-![Application consultée depuis un autre appareil](screenshots/06-application-autre-machine.jpg)
+![Application consultée depuis un autre appareil](screenshots/application-sur-mon-telephone1.jpg)
 
 ## 8. Branches Git
 
